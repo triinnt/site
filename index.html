@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang = "pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>a</title>
+        <link rel="shortcut icon" href="https://cdn.discordapp.com/emojis/877792903982899200.gif?size=2048" type="image/gif">
+        <link rel="stylesheet" href="index.css">
+        <meta http-equiv="Content-Security-Policy"
+        content="default-src *; img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+
+    </head>
+    <body>
+        <div id="center">
+            <div id="avatar" style="background-image: url('https://cdn.discordapp.com/avatars/853108220251734056/a_eb4ac061bc69ced451fc546e5de31f7a.gif?size=2048')"></div>
+            <div class="sign"><span class="fast-flicker">Tr</span>in<span class="flicker">t</span></div>
+            <div id="Forever" style="cursor:pointer" onclick="redirect()"><span></span><span></span><span></span><span></span>Friends Forever</div>
+            <div id="Loves" style="cursor:pointer" onclick="rediirect()"><span></span><span></span><span></span><span></span>I love Forever</div>
+        </div>
+        <script>
+            const redirect = () => window.location.href = '../htmls/friends.html'
+            document.body.style.backgroundImage = `url("https://steamuserimages-a.akamaihd.net/ugc/1179328606457897094/0A548A647DCA8C528B36E31DA856193419F51AD4/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false")`
+        </script>
+        <script>
+            const rediirect = () => window.location.href = '../htmls/loves.html'
+            document.body.style.backgroundImage = `url("https://steamuserimages-a.akamaihd.net/ugc/1179328606457897094/0A548A647DCA8C528B36E31DA856193419F51AD4/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false")`
+        </script>
+
+
+    <script>
+        let x = 0;
+        const title = []
+        const nick = `trint`
+
+        for (let i = 1; i <= nick.length; ++i) {
+        title.push(nick.slice(0, i))
+        }
+        for (let i = 1; i < nick.length; ++i) {
+        title.push(nick.slice(0, -i))
+        }
+        title.push('&lrm;')
+
+        function loop() {
+            document.getElementsByTagName('title')[0].innerHTML = title[x++ % title.length];
+            setTimeout(() => loop(), 250)
+        }
+        loop()
+
+    </script>
+    </body>
+</html>
